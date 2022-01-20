@@ -6,22 +6,24 @@ Helm Charts are simply Kubernetes YAML manifests combined into a single package(
 
 The directory structure of the helm chart:
 ```
-DEMO-HELM-CHART/
-|
-|- .helmignore 
-| 
-|- Chart.yaml 
-| 
-|- values.yaml 
-| 
-|- charts/ 
-|
-|- templates/
+thadikaran@ubuntu:~$ tree helm_demoapp01/
+helm_demoapp01/
+├── Chart.yaml
+├── charts
+├── templates
+│   ├── NOTES.txt
+│   ├── _helpers.tpl
+│   ├── deployment.yaml
+│   ├── hpa.yaml
+│   ├── ingress.yaml
+│   ├── service.yaml
+│   ├── serviceaccount.yaml
+│   └── tests
+│       └── test-connection.yaml
+└── values.yaml
+
+3 directories, 10 files
 ```
-
-#### .helmignore:  
-This holds all the files to ignore when packaging the chart. Similar to .gitignore, if you are familiar with git.  
-
 #### Chart.yaml:  
 This is where you put all the information about the chart you are packaging. So, for example, your version number, etc. This is where you will put all those details.  
 
